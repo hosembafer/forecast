@@ -51,7 +51,7 @@ export default class ForecastService {
 
     // Data Fetcher
     static fetchData(location) {
-        return fetch("http://localhost/sfl_test/miniProxy.php?https://query.yahooapis.com/v1/public/yql?d=7&q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "') and u='c' &format=json")
+        return fetch("miniProxy.php?https://query.yahooapis.com/v1/public/yql?d=7&q=select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + location + "') and u='c' &format=json")
         .then(response => response.json())
         .then(response => {
             if (response.query.results) {
