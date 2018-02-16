@@ -5,7 +5,7 @@ export default class LocationService {
 
     // Data Fetcher
     static async getCities(term) {
-        return fetch("http://localhost/sfl_test/miniProxy.php?https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + term + "&types=(cities)&key=AIzaSyAIZh07RH3m8fo3KFD7KtmswDmShN-6O1c")
+        return fetch("miniProxy.php?https://maps.googleapis.com/maps/api/place/autocomplete/json?input=" + term + "&types=(cities)&key=AIzaSyAIZh07RH3m8fo3KFD7KtmswDmShN-6O1c")
         .then(response => response.json())
         .then(response => {
             Store.cities = [];
@@ -49,7 +49,7 @@ export default class LocationService {
         navigator.geolocation.getCurrentPosition(function(position) {
             let coordString = Number(position.coords.latitude).toFixed(3) + "," + Number(position.coords.longitude).toFixed(3);
 
-            fetch("http://localhost/sfl_test/miniProxy.php?http://maps.googleapis.com/maps/api/geocode/json?latlng=" + coordString)
+            fetch("miniProxy.php?http://maps.googleapis.com/maps/api/geocode/json?latlng=" + coordString)
             .then(response => response.json())
             .then(response => {
                 let detectedLocation = response.results.find(item => {
