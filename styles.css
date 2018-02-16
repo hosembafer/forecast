@@ -1,0 +1,82 @@
+body {
+    background-color: #EEE;
+}
+
+body, input {
+    font-family: 'Noto Sans';
+}
+
+#cities_input {
+    width: 160px;
+}
+
+#days {
+    margin-bottom: 20px;
+}
+
+.day {
+    display: inline-block;
+    background-color: #95ceff;
+    padding: 6px 10px;
+    border-radius: 4px;
+    margin-right: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.day * {
+    pointer-events: none;
+}
+
+.day.active {
+    background-color: #3ca5ff;
+}
+
+.forecast {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.forecast-location {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.forecast-dayOfWeek {
+    color: #555;
+}
+
+.forecast-temp {
+    font-size: 46px;
+    letter-spacing: -3px;
+}
+
+
+
+.search_area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search_area > div {
+    margin-right: 5px;
+}
+
+
+#loader {
+    border: 4px solid #BBB;
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    width: 12px;
+    height: 12px;
+    animation: spin 2s linear infinite;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

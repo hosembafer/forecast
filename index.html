@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>SFL Forecast Test</title>
+        <link rel="stylesheet" href="styles.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+    </head>
+    <body>
+        <div id="root">
+            <div id="app-title">
+                <h1>SFL Forecast Test</h1>
+            </div>
+
+            <div class="search_area">
+                <div>
+                    <input list="cities" id="cities_input" value="Yerevan, Armenia">
+                </div>
+                <div>
+                    <datalist id="cities"></datalist>
+                </div>
+                <div>
+                    <button id="detechWithGeolocation">Detect location with Geolocation API</button>
+                </div>
+                <div>
+                    <div id="loader"></div>
+                </div>
+            </div>
+
+            <div id="days"></div>
+
+            <div id="forecast_data"></div>
+        </div>
+        <script>
+            // Global initial state
+            var Store = {
+                location: "Yerevan, Armenia",
+                selectedDay: {
+                    date: new Date(),
+                    active: false,
+                    weekDay: new Date().getDay(),
+                },
+                forecast: [],
+            };
+            
+
+            Date.prototype.yyyymmdd = function() {
+                var mm = this.getMonth() + 1;
+                var dd = this.getDate();
+
+                return [this.getFullYear(),
+                    (mm>9 ? '' : '0') + mm,
+                    (dd>9 ? '' : '0') + dd
+                ].join('-');
+            };
+        </script>
+        <script type="module" src="src/main.js"></script>
+    </body>
+</html>
