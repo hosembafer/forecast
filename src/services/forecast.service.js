@@ -32,6 +32,11 @@ export default class ForecastService {
         Store.location = document.getElementById("cities_input").value;
 
         ForecastService.fetchData(Store.location).then(response => {
+            if (response == null) {
+                document.getElementById("cities_input").value = "";
+                return null;
+            }
+
             let component = new ForecastComponent();
             let componentHtml = component.render({
                 location: Store.location,
