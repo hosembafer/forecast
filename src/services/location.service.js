@@ -1,5 +1,5 @@
-import ForecastService from "./forecast.service";
-import CityOptionComponent from "../components/cityOption.component";
+import ForecastService from "./forecast.service.js";
+import CityOptionComponent from "../components/cityOption.component.js";
 
 export default class LocationService {
 

@@ -1,6 +1,6 @@
 import BaseComponent from './base.component.js';
 
-import ForecastComponent from './forecast.component';
+import ForecastComponent from './forecast.component.js';
 
 export default class DayComponent extends BaseComponent {
     template(data) {

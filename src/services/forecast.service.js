@@ -1,4 +1,4 @@
-import ForecastComponent from '../components/forecast.component';
+import ForecastComponent from '../components/forecast.component.js';
 
 export default class ForecastService {
 

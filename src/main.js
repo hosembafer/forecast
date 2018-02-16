@@ -1,10 +1,10 @@
 // Data layers
-import ForecastService from './services/forecast.service';
-import LocationService from './services/location.service';
+import ForecastService from './services/forecast.service.js';
+import LocationService from './services/location.service.js';
 
 // Presentations
-import DayComponent from './components/day.component';
-import CityOptionComponent from './components/cityOption.component';
+import DayComponent from './components/day.component.js';
+import CityOptionComponent from './components/cityOption.component.js';
 
 
 // Static data variables
